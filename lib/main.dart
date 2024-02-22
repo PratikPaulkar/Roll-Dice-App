@@ -1,36 +1,41 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  home: Scaffold(
-    backgroundColor: Colors.white,
-    appBar: AppBar(
-      backgroundColor: Colors.deepPurple,
-      title: const Text(
-          'My First App',
-        style: TextStyle(
-          color: Colors.white,
-        ),
-      ),
-      centerTitle: true,
-    ),
-    body: const Center(
-      child:  Text('Hi there! How are you...?'),
-    ),
-    floatingActionButton: const FloatingActionButton(
-      child: const Text("Click!"),
-      onPressed:  AsyncSnapshot.nothing,
-    ),
-  ),
-));
+void main(){
+  runApp(const MyApp());
+} 
 
 
-class Test extends StatelessWidget {
-  const Test({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.purple
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("My First App"),
+      ),
+      
+    );
   }
 }
 
