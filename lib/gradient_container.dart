@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/styled_text.dart';
 
-const startAlignment = Alignment.topLeft;
-const endAlignment = Alignment.bottomRight;
+const startAlignment = Alignment.topCenter;
+const endAlignment = Alignment.bottomCenter;
 
 class GradientContainer extends StatelessWidget {
   const GradientContainer(this.colors, {super.key});
   
+  // added the additional constructor to make the same theme reusable.
+  const GradientContainer.triColor({super.key, this.colors = const [Colors.orangeAccent, Colors.white, Colors.greenAccent]});
+
   final List<Color> colors;
+
 
   @override
   Widget build(context){
@@ -20,7 +24,7 @@ class GradientContainer extends StatelessWidget {
             ),
           ),
           child: const Center(
-            child: StyledText('Hello Developer!')
+            child: StyledText('Hello developer!')
           ),
         );
   }
